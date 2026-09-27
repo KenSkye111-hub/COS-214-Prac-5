@@ -1,5 +1,5 @@
 CXX := g++
-CXXFLAGS := -std=c++17 -Wall -g -MMD -MP
+CXXFLAGS := -std=c++11 -Wall -g -MMD -MP
 
 TARGET := campusguard
 
