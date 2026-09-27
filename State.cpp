@@ -16,6 +16,8 @@ void DispatchedState::changeState(Incident* i, std::string event) {
     }
 }
 
+std::string DispatchedState::getName() const { return "Dispatched"; }
+
 void InProgressState::changeState(Incident* i, std::string event) {
     if (event == Event::COMPLETE) {
         std::cout << "[STATE] Incident: In Progress -> Finished\n";
@@ -27,7 +29,11 @@ void InProgressState::changeState(Incident* i, std::string event) {
     }
 }
 
+std::string InProgressState::getName() const { return "In Progress"; }
+
 void FinishedState::changeState(Incident*, std::string event) {
     std::cout << "[STATE] Incident is already Finished. "
               << "Event '" << event << "' cannot be performed.\n";
 }
+
+std::string FinishedState::getName() const { return "Finished"; }
