@@ -1,12 +1,15 @@
 #ifndef CAMPUS_GUARD_FACADE_H
 #define CAMPUS_GUARD_FACADE_H
 
+#include <vector>
+
 class CommunicationSystem;
 class AccessControlSystem;
 class SecuritySystem;
 class MedicalSystem;
 class CommandDispatcher;
 class Incident;
+class Coordinator;
 
 class CampusGuardFacade {
 private:
