@@ -1,9 +1,14 @@
 #include "System.h"
+#include "Coordinator.h"
 #include <iostream>
 
 System::~System() { }
 
 void System::setCoordinator(Coordinator* c) { coordinator = c; }
+
+void System::reportEvent(std::string event){
+  if(coordinator) coordinator->notify(this, event);
+}
 
 CommunicationSystem::CommunicationSystem(alertSender* s) : sender(s){ }
 

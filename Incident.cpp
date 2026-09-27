@@ -1,7 +1,7 @@
 #include "Incident.h"
 #include "State.h"
 
-Incident::Incident(std::string areaId) : areaId(areaId), state(new DispatchedState()) { }
+Incident::Incident(std::string areaId) : state(new DispatchedState()), areaId(areaId) { }
 
 Incident::~Incident(){ delete state; }
 

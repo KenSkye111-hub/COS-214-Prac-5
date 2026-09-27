@@ -18,6 +18,7 @@ class System {
   public:
     virtual ~System(); //virtual desctructor since polymorphic base
     void setCoordinator(Coordinator* c);
+    void reportEvent(std::string event); //notify coordinator
 };
 
 //Concrete Colleagues
