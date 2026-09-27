@@ -5,9 +5,9 @@ EvacuateAreaCommand::EvacuateAreaCommand(Area* receiver){
 }
 
 void EvacuateAreaCommand::execute(){
-    receiver->restrict();
+    receiver->setStatus(AreaStatus::RESTRICTED);
 }
 
 void EvacuateAreaCommand::undo(){
-    receiver->unlock();
+    receiver->setStatus(AreaStatus::UNLOCKED);
 }

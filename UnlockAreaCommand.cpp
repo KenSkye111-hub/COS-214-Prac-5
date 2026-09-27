@@ -1,13 +1,13 @@
-#include "UnlockAreaCommand.hh"
+#include "UnlockAreaCommand.h"
 
 UnlockAreaCommand::UnlockAreaCommand(Area* receiver){
     this->receiver = receiver;
 }
 
 void UnlockAreaCommand::execute(){
-    receiver->unlock();
+    receiver->setStatus(AreaStatus::UNLOCKED);
 }
 
 void UnlockAreaCommand::undo(){
-    receiver->lock();
+    receiver->setStatus(AreaStatus::LOCKED);
 }
