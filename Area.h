@@ -2,23 +2,16 @@
 #define AREA_H
 //Originator and Receiver
 
-#include <string>
-#include "AreaMemento.h"
+enum class AreaStatus { UNLOCKED, LOCKED, RESTRICTED };
 
 class Area{
     private:
-        std::string id;
-        AreaState state;
+        AreaStatus status;
 
     public:
-        Area(const std::string& id);
-        std::string getId() const;
-        AreaState getState() const;
-        AreaMemento* createMemento() const;
-        void restore(AreaMemento* memento);
-        void lock();
-        void unlock();
-        void restrict();
+        Area(AreaStatus s = AreaStatus::UNLOCKED);
+        AreaStatus getStatus() const;
+        void setStatus(AreaStatus s);
 };
 
 

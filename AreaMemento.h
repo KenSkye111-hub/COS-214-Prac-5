@@ -2,21 +2,15 @@
 #define AREAMEMENTO_H
 //MEMENTO
 
-//possible states of an area
-enum class AreaState{
-    UNLOCKED,
-    LOCKED,
-    RESTRICTED
-};
-
+#include "Area.h"
 
 class AreaMemento{
     private:
-        AreaState state;
+        AreaStatus savedStatus;
     
     public:
-        AreaMemento(AreaState state);
-        AreaState getState() const;
+        AreaMemento(AreaStatus s = AreaStatus::UNLOCKED);
+        AreaStatus getStatus() const;
 };
 
 #endif //AREAMEMENTO_H
