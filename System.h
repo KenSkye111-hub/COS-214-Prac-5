@@ -15,10 +15,12 @@ class Coordinator;
 class System {
   private:
     Coordinator* coordinator;
+  protected: 
+    void reportEvent(std::string event); //notify coordinator& keep between subclasses
   public:
     virtual ~System(); //virtual desctructor since polymorphic base
     void setCoordinator(Coordinator* c);
-    void reportEvent(std::string event); //notify coordinator
+    
 };
 
 //Concrete Colleagues
@@ -52,6 +54,9 @@ class SecuritySystem : public System {
 class MedicalSystem : public System {
   public:
     void dispatchUnit();
+    //logic for internal state changes on incident
+    void arriveOnScene(); 
+    void completeAllTreatment();
 };
 
 #endif

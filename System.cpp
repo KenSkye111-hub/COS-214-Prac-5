@@ -1,5 +1,6 @@
 #include "System.h"
 #include "Coordinator.h"
+#include "Event.h"
 #include <iostream>
 
 System::~System() { }
@@ -22,6 +23,16 @@ void SecuritySystem::dispatchUnit(){
 
 void MedicalSystem::dispatchUnit(){ 
   std::cout << "[DISPATCHING UNIT] - medical system\n";
+}
+
+void MedicalSystem::arriveOnScene(){
+  std::cout << "[ARRIVING ON SCENE] - medical unit\n";
+  reportEvent(Event::ARRIVED);
+}
+
+void MedicalSystem::completeAllTreatment(){
+  std::cout << "[Leaving scene, everyone ok] - medical unit\n";
+  reportEvent(Event::COMPLETE);
 }
 
 void AccessControlSystem::addArea(std::string areaId, Area a) {
